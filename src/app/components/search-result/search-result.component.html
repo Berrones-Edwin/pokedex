@@ -1,0 +1,28 @@
+<div *ngIf="searchPokemon" class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+  <div class="card" SetColor [types]="searchPokemon.types">
+    <img
+      class="card__bg"
+      src="../../../assets/images/pokeball-background.png"
+      alt="pokeball-card"
+    />
+    <div class="card__info">
+      <h2 class="color-white">{{ searchPokemon.name }}</h2>
+      <span
+        class="color-white"
+        SetColor
+        [types]="searchPokemon.types"
+        [isLight]="false"
+        *ngFor="let type of searchPokemon.types"
+        >{{ type.type.name }}</span
+      >
+    </div>
+    <div class="card__img">
+      <img
+        src="https://projectpokemon.org/images/normal-sprite/{{
+          searchPokemon.name
+        }}.gif"
+        [alt]="searchPokemon.name"
+      />
+    </div>
+  </div>
+</div>

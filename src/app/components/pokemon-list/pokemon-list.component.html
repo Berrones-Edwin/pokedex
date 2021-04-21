@@ -1,0 +1,43 @@
+<div  class="row pokemon__list">
+    <div
+      class="col-sm-6 col-md-6 col-lg-4 col-xl-4"
+      *ngFor="let pokemon of pokemonsList"
+    >
+      <div
+        class="card"
+        (click)="onDetail(pokemon)"
+        SetColor
+        [types]="pokemon.types"
+        
+      >
+        <img
+          class="card__bg"
+          src="../../../assets/images/pokeball-background.png"
+          alt="pokeball-card"
+        />
+        <div class="card__info">
+          <h2 class="color-white">{{ pokemon.name }}</h2>
+          <span
+            class="color-white"
+            SetColor
+            [types]="pokemon.types"
+            [isLight]="false"
+            *ngFor="let type of pokemon.types"
+            >{{ type.type.name }}</span
+          >
+        </div>
+        <div class="card__img">
+          <img
+            src="https://projectpokemon.org/images/normal-sprite/{{
+              pokemon.name
+            }}.gif"
+            [alt]="pokemon.name"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <button [disabled]="count===0"  (click)="prevPage()" mat-button>Previous</button>
+    <button  [disabled]="pokemonsList.length === 0" (click)="nextPage()" mat-button>Next</button>
+  </div>

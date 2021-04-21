@@ -1,0 +1,14 @@
+<mat-form-field
+  class="search col-sm-12 col-md-12 col-lg-8 col-xl-8"
+  floatLabel="always"
+>
+  <mat-label>Pokemon name</mat-label>
+  <!-- (keyup)="searchPokemon()" -->
+  <input
+    matInput
+    [formControl]="search"
+    (keyup)="searchPokemon()"
+    placeholder="Enter name pokemon"
+    autocomplete="off"
+  />
+</mat-form-field>
