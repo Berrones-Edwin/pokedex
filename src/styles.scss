@@ -35,18 +35,9 @@ $steel-light: #bbc5c4;
 $fairy: #ffa0c2;
 $fairy-light: #fdd1e0;
 
-$gray-light: #d8d8d8;
-$gray-dark: #606060;
-$gray: #b6b6b6;
-
-$transparent: transparent;
-$black: #000000;
-$white: #ffffff;
-
-$general: ("black", $black), ("white", $white), ("grass", $grass),
-  ("grass-light", $grass-light), ("fire", $fire), ("fire-light", $fire-light),
-  ("water", $water), ("water-light", $water-light), ("normal", $normal),
-  ("normal-light", $normal-light), ("flying", $flying),
+$general: ("grass", $grass), ("grass-light", $grass-light), ("fire", $fire),
+  ("fire-light", $fire-light), ("water", $water), ("water-light", $water-light),
+  ("normal", $normal), ("normal-light", $normal-light), ("flying", $flying),
   ("flying-light", $flying-light), ("bug", $bug), ("bug-light", $bug-light),
   ("poison", $poison), ("poison-light", $poison-light), ("electric", $electric),
   ("electric-light", $electric-light), ("ground", $ground),
@@ -57,23 +48,12 @@ $general: ("black", $black), ("white", $white), ("grass", $grass),
   ("ghost", $ghost), ("ghost-light", $ghost-light), ("dragon", $dragon),
   ("dragon-light", $dragon-light), ("dark", $dark), ("dark-light", $dark-light),
   ("steel", $steel), ("steel-light", $steel-light), ("fairy", $fairy),
-  ("fairy-light", $fairy-light), ("gray", $gray);
+  ("fairy-light", $fairy-light);
 
 @each $color in $general {
   $name: nth($color, 1);
   $value: nth($color, 2);
   .bg-color-#{$name} {
     background-color: $value !important;
-  }
-  .color-#{$name} {
-    color: $value !important;
-  }
-}
-@for $i from 0 through 100 {
-  .w-#{$i} {
-    width: #{$i * 1%};
-  }
-  .h-#{$i} {
-    height: #{$i * 1%};
   }
 }
